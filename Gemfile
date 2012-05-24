@@ -7,9 +7,11 @@ gem 'execjs'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'gravatar_image_tag'
 
 group :development do
   gem 'rspec-rails'
+  gem 'rspec-core', '2.9.0'
   gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
 end
 group :test do
@@ -17,6 +19,7 @@ group :test do
   gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
   gem 'webrat'
   gem 'spork'
+  gem 'factory_girl_rails'
 end
 
 # Gems used only for assets and not required
