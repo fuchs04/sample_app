@@ -36,7 +36,7 @@ describe UsersController do
     end
     it "should have the right title" do
       get :new
-      response.should have_selector("title", content: "Sign up")
+      response.should have_selector("title", content: "Registrieren")
     end
     it "should have a name field" do
       get :new
@@ -70,7 +70,7 @@ describe UsersController do
       end
       it "should have the right title" do
         post :create, user: @attr
-        response.should have_selector("title", content: "Sign up")
+        response.should have_selector("title", content: "Registrieren")
       end
       it "should render the 'new' page" do
         post :create, user: @attr
@@ -96,6 +96,10 @@ describe UsersController do
       it "should have a welcome message" do
         post :create, user: @attr
         flash[:success].should =~ /willkommen auf der hochzeitsseite/i
+      end
+      it "should sign in the user" do
+        post :create, user: @attr
+        controller.should be_signed_in
       end
     end
   end
