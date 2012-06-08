@@ -76,6 +76,9 @@ Spork.prefork do
     # instead of true.
     config.use_transactional_fixtures = true
     ActiveSupport::Dependencies.clear
+    def test_sign_in(user)
+      controller.sign_in(user)
+    end
   end
 end
 
