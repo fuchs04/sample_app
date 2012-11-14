@@ -8,11 +8,13 @@ gem 'execjs'
 
 gem 'sqlite3'
 gem 'gravatar_image_tag'
+gem 'will_paginate'
 
 group :development do
   gem 'rspec-rails'
   gem 'rspec-core', '2.9.0'
   gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
+  gem 'faker'
 end
 group :test do
   gem 'rspec'
