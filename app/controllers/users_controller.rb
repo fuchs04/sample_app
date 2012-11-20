@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     @title = @user.name
   end
   def new
+    if signed_in?
+      redirect_to(root_path)
+      flash[:error] = "Sie sind bereits angemeldet."
+    end
     @user = User.new
     @title = "Registrieren"
   end
